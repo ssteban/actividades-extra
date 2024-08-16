@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: nombre-de-tu-app
+    env: python
+    region: oregon  # Cambia esta región según sea necesario
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DB_HOST
+        fromEnv: DB_HOST
+      - key: DB_USER
+        fromEnv: DB_USER
+      - key: DB_PASSWORD
+        fromEnv: DB_PASSWORD
+      - key: DB_NAME
+        fromEnv: DB_NAME
+      - key: DB_PORT
+        fromEnv: DB_PORT

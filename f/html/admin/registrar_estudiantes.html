@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Estudiantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <a class="navbar-brand" href="#">Administrador</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="perfil.html">Perfil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Registrar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="registrar_estudiantes.html">Registrar Estudiantes</a>
+                        <a class="dropdown-item" href="registrar_profesores.html">Registrar Profesores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Actividades
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="supervisar.html">Supervisar Actividades Extracurriculares</a>
+                        <a class="dropdown-item" href="informes.html">Informes y Estadísticas</a>
+                        <a class="dropdown-item" href="aprobar.html">Aprobar Nuevas Actividades</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cambiar_roles.html">Cambiar roll</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="logout()" href="#">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Registrar Estudiantes</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del estudiante" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingrese el apellido del estudiante" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingrese el email del estudiante" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" placeholder="Ingrese el teléfono del estudiante" required>
+            </div>
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <select class="form-control" id="curso" required>
+                    <option value="">Seleccione el curso</option>
+                    <option value="Matemáticas">Matemáticas</option>
+                    <option value="Ciencias">Ciencias</option>
+                    <option value="Literatura">Literatura</option>
+                    <option value="Historia">Historia</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" class="form-control" id="contraseña" placeholder="Ingrese la contraseña" required>
+            </div>
+            <button type="button" onclick=register_e() class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../js/registrar_e.js"></script>
+    <script>
+        if(checkLogin()){
+            document.addEventListener('DOMContentLoaded', (event) => {
+            });
+        }  
+    </script>
+</body>
+</html>
