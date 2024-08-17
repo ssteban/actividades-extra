@@ -23,16 +23,16 @@ const login = async () => {
             localStorage.setItem('loggedInUser', JSON.stringify({ user: usuario }));
             switch (data.role) {
                 case 'admin':
-                    window.location.href = 'admin/admin.html';
+                    window.location.href = 'html/admin/admin.html';
                     break;
                 case 'rector':
-                    window.location.href = 'rector.html';
+                    window.location.href = 'html/rector.html';
                     break;
                 case 'estudiante':
-                    window.location.href = 'estudiante/estudiantes.html';
+                    window.location.href = 'html/estudiante/estudiantes.html';
                     break;
                 case 'profesor':
-                    window.location.href = 'profesor/profesores.html';
+                    window.location.href = 'html/profesor/profesores.html';
                     break;
                 default:
                     console.error('Role not recognized:', data.role);
