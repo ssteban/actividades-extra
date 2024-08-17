@@ -4,3 +4,4 @@ mysql-connector-python==8.0.28
 flask-jwt-extended
 reportlab
 python-dotenv
+gunicorn
