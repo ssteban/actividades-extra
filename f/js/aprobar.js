@@ -89,7 +89,7 @@ function rechazarActividad(id) {
 const logout = async () => {
     try {
         localStorage.removeItem('jwtToken');
-        window.location.href = '../../index.html';
+        window.location.href = '../../../index.html';
     } catch (error) {
         console.error('Error al cerrar sesión:', error);
     }
@@ -99,7 +99,7 @@ const checkLogin = async () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (!loggedInUser) {
         setTimeout(function() {
-            window.location.href = '../../index.html';
+            window.location.href = '../../../index.html';
         }, 1000);
     } else {
         return true;
