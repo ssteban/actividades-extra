@@ -15,7 +15,7 @@ function fetchWithToken(url, options = {}) {
 
 function fetchActividades() {
     console.log('sirve')
-    fetchWithToken('http://127.0.0.1:5000/get_actividades')
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/get_actividades')
         .then(response => response.json())
         .then(data => {
             const actividadesBody = document.getElementById('actividadesBody');
@@ -39,7 +39,7 @@ function fetchActividades() {
 }
 
 function aprobarActividad(id) {
-    fetchWithToken(`http://127.0.0.1:5000/update_actividad/${id}`, {
+    fetchWithToken(`https://actividades-extra-7g06.onrender.com/update_actividad/${id}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ function rechazarActividad(id) {
             return;
         }
 
-        fetchWithToken(`http://127.0.0.1:5000/update_actividad/${id}`, {
+        fetchWithToken(`https://actividades-extra-7g06.onrender.com/update_actividad/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

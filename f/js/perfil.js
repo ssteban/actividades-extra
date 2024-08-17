@@ -18,7 +18,7 @@ function obtener() {
     const email = loggedInUser.user;  // Obtén el correo electrónico del usuario
     console.log(email);
 
-    fetchWithToken('http://127.0.0.1:5000/get_user_profile', {
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/get_user_profile', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

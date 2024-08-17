@@ -25,7 +25,7 @@ function fetchRegisteredActivities() {
         return;
     }
 
-    fetchWithToken("http://127.0.0.1:5000/get_registered_activities", {
+    fetchWithToken("https://actividades-extra-7g06.onrender.com/get_registered_activities", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ function fetchRegisteredActivities() {
 }
 
 function fetchActividadesDisponibles(registeredEvents) {
-    fetchWithToken('http://127.0.0.1:5000/get_actividades_aprobadas')
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/get_actividades_aprobadas')
     .then(response => response.json())
     .then(data => {
         console.log(data);  // Verificar qué datos estás recibiendo
@@ -125,7 +125,7 @@ function initializeCalendar(events) {
 function registerActivity(activityId) {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
-    fetchWithToken('http://127.0.0.1:5000/register_activity', {
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/register_activity', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -147,7 +147,7 @@ function registerActivity(activityId) {
 function leaveActivity(activityId) {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
-    fetchWithToken('http://127.0.0.1:5000/leave_activity', {
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/leave_activity', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

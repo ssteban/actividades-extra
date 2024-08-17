@@ -22,7 +22,7 @@ const register_e = async () => {
     const password = document.getElementById('contraseña').value;
 
     try {
-        const response = await fetchWithToken('http://127.0.0.1:5000/register_student', {
+        const response = await fetchWithToken('https://actividades-extra-7g06.onrender.com/register_student', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

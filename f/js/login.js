@@ -8,7 +8,7 @@ const login = async () => {
     console.log('Enviando datos:', { username: usuario, password: contra, role: rol });
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/login', {
+        const response = await fetch('https://actividades-extra-7g06.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

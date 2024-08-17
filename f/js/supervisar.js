@@ -20,7 +20,7 @@ async function fetchWithToken(url, options = {}) {
 }
 
 function fetchActividades() {
-    fetchWithToken('http://127.0.0.1:5000/get_actividades_aprobadas')
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/get_actividades_aprobadas')
         .then(data => {
             const actividadesBody = document.getElementById('actividadesBody');
             actividadesBody.innerHTML = '';

@@ -21,7 +21,7 @@ document.getElementById('activityForm').addEventListener('submit', function(even
     const activityName = document.getElementById('activityName').value;
     const activityDateTime = document.getElementById('activityDateTime').value;
 
-    fetchWithToken('http://127.0.0.1:5000/add_activityy', {
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/add_activityy', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -43,12 +43,19 @@ document.getElementById('activityForm').addEventListener('submit', function(even
 });
 
 function fetchActividades() {
-    fetchWithToken('http://127.0.0.1:5000/get_actividades_aprobadas')
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/get_actividades_aprobadas')
         .then(response => response.json())
         .then(data => {
+            console.log('Data received:', data); // Verifica qué datos estás recibiendo
+
+            if (!data || !Array.isArray(data.actividades)) {
+                throw new Error('Expected an object with an array "actividades" but got: ' + JSON.stringify(data));
+            }
+
             const actividadesList = document.getElementById('activityList');
             actividadesList.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
-            data.forEach(actividad => {
+
+            data.actividades.forEach(actividad => {
                 const listItem = document.createElement('li');
                 listItem.className = 'list-group-item';
                 listItem.textContent = actividad.actividad; // Mostrar solo el nombre de la actividad
@@ -57,6 +64,7 @@ function fetchActividades() {
         })
         .catch(error => console.error('Error fetching actividades:', error));
 }
+
 
 const logout = async () => {
     try {

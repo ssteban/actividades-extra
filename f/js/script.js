@@ -133,7 +133,7 @@ const checkLogin = async () => {
 // Función para obtener y mostrar el conteo de actividades y usuarios
 const conteonumero = async () => {
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/registration-stats', {
+        const response = await fetch('https://actividades-extra-7g06.onrender.com/api/registration-stats', {
             method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('jwtToken') // Asegúrate de ajustar la forma en que obtienes el token
@@ -152,7 +152,7 @@ const conteonumero = async () => {
 const fetchData = async () => {
     try {
         const token = localStorage.getItem('jwtToken');
-        const response = await fetch('http://127.0.0.1:5000/api/combined-stats', {
+        const response = await fetch('https://actividades-extra-7g06.onrender.com/api/combined-stats', {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await response.json();
@@ -164,8 +164,7 @@ const fetchData = async () => {
 };
 
 
-// Función para crear las gráficas dinámicamente
-// Función para crear las gráficas dinámicamente
+//crear las gráficas dinámicamente
 const createCharts = async () => {
     const data = await fetchData();
     if (!data) return;

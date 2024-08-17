@@ -14,7 +14,7 @@ function fetchWithToken(url, options = {}) {
 }
 
 function fetchUsuarios() {
-    fetchWithToken('http://127.0.0.1:5000/get_usuarios')
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/get_usuarios')
         .then(response => response.json())
         .then(data => {
             const tbody = document.querySelector('tbody');
@@ -49,7 +49,7 @@ function fetchUsuarios() {
 function cambiarRol(id, email) {
     const nuevoRol = document.getElementById(`nuevoRol${id}`).value;
 
-    fetchWithToken('http://127.0.0.1:5000/update_role', {
+    fetchWithToken('https://actividades-extra-7g06.onrender.com/update_role', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
