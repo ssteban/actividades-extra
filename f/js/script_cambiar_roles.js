@@ -66,8 +66,7 @@ function cambiarRol(id, email) {
     })
     .then(data => {
         console.log("Rol actualizado:", data);
-        // Aquí puedes actualizar la tabla o la interfaz de usuario
-        fetchUsuarios(); // Recargar usuarios
+        fetchUsuarios(); 
     })
     .catch(error => console.error('Error cambiando rol:', error));
 }
@@ -76,7 +75,7 @@ const logout = async () => {
     try {
         localStorage.removeItem('jwtToken');  // Asegúrate de eliminar también el token
         localStorage.removeItem('loggedInUser');
-        window.location.href = '../login.html';
+        window.location.href = '../index.html';
     } catch (error) {
         console.error('Error al cerrar sesión:', error);
     }
@@ -86,7 +85,7 @@ const checkLogin = async () => {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
     if (!loggedInUser) {
         setTimeout(function() {
-            window.location.href = '../login.html';
+            window.location.href = '../index.html';
         }, 1000);
     } else {
         return true;
